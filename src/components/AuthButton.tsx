@@ -1,6 +1,6 @@
 "use client";
 
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { Button } from "./ui/button";
 import { Power } from "lucide-react";
 import Link from "next/link";
@@ -20,5 +20,5 @@ export default function AuthButton() {
 		);
 	}
 
-	return <Button size={"sm"} variant={"outline"} onClick={() => signIn("google")}>Iniciar con Google</Button>;
+	return <Link href={"/login"} className="text-xs border-1 rounded-lg px-6 h-8 flex items-center">Iniciar Sesión</Link>;
 }
