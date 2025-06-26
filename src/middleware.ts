@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server"
 
 export default async function middleware(req: NextRequest) {
   const session = await auth();
+  console.log("Middleware session:", session);
   if (!session) {
     return NextResponse.redirect(new URL("/denied?type=no_session", req.url))
   }
